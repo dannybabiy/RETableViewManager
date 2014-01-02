@@ -129,7 +129,7 @@
 #endif
         self.item.inlinePickerItem = [REInlinePickerItem itemWithPickerItem:self.item];
         [self.section insertItem:self.item.inlinePickerItem atIndex:self.item.indexPath.row + 1];
-        [self.tableViewManager.tableView insertRowsAtIndexPaths:@[self.item.inlinePickerItem.indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableViewManager.tableView insertRowsAtIndexPaths:@[self.item.inlinePickerItem.indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
     } else {
         if (selected && self.item.inlinePicker && self.item.inlinePickerItem) {
             [self setSelected:NO animated:NO];
@@ -138,7 +138,7 @@
             NSIndexPath *indexPath = [self.item.inlinePickerItem.indexPath copy];
             [self.section removeItemAtIndex:self.item.inlinePickerItem.indexPath.row];
             self.item.inlinePickerItem = nil;
-            [self.tableViewManager.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [self.tableViewManager.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
         }
     }
 }
